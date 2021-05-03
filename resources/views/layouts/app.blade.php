@@ -1,4 +1,55 @@
 <!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <!-- CoreUI CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/@coreui/coreui/dist/css/coreui.min.css" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+    <title>{{ config('app.name', 'Laravel Todolist') }}</title>
+    @livewireStyles
+    @yield('styles')
+</head>
+
+<body class="c-app">
+
+    <header>
+        <x-sidebar/>
+    </header>
+
+    <main class="c-main">
+        <div class="container">
+            @yield('content')
+        </div>
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js first, then CoreUI JS -->
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/@coreui/coreui/dist/js/coreui.min.js"></script>
+    @livewireScripts
+    @yield('scripts')
+</body>
+
+</html>
+
+
+
+
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -80,4 +131,4 @@
         </main>
     </div>
 </body>
-</html>
+</html> --}}
